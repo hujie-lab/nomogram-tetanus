@@ -4,139 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache">
-<title>非新生儿重症破伤风发生风险在线预测列线图</title>
+<title>更新版 Ablet 重症风险在线预测列线图</title>
 <style>
-:root{--text:#1D1D1F;--s:#86868B;--t:#AEAEB2;--blue:#0071E3;--green:#34C759;--orange:#FF9500;--red:#FF3B30;--card:rgba(255,255,255,0.85);--border:#E5E5EA}
+:root{--text:#1D1D1F;--s:#86868B;--t:#AEAEB2;--blue:#0071E3;--green:#34C759;--orange:#FF9500;--red:#FF3B30;--card:rgba(255,255,255,.88);--border:#E5E5EA}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif;background:linear-gradient(180deg,#FBFBFD 0%,#F5F5F7 100%);color:var(--text);-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;min-height:100vh}
-.container{width:680px;max-width:98vw;padding:20px 10px}
-.hero{text-align:center;padding:0 10px 4px}
-.hero h1{font-size:1.5rem;font-weight:700;letter-spacing:0.02em}
-.hero p{font-size:.78rem;color:var(--s);margin-top:1px}
-.hero .citation{font-size:.65rem;color:var(--t);margin-top:1px;font-style:italic}
+.container{width:720px;max-width:98vw;padding:20px 10px}.hero{text-align:center;padding:0 10px 4px}.hero h1{font-size:1.45rem;font-weight:700;letter-spacing:.02em}.hero p{font-size:.78rem;color:var(--s);margin-top:4px}.hero .citation{font-size:.66rem;color:var(--t);margin-top:3px}
 .card{background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:14px;padding:18px 20px;margin-bottom:10px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 18px rgba(0,0,0,.04)}
-.card h2{font-size:.95rem;font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:5px}
-.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.dot-blue{background:var(--blue)}.dot-green{background:var(--green)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
-.field label{display:flex;justify-content:space-between;align-items:baseline;font-size:.76rem;font-weight:600;margin-bottom:3px}
-.field label .val{font-size:.95rem;color:var(--blue);font-weight:700}
-input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--blue) var(--fill,0%),var(--border) var(--fill,0%));outline:0}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--blue);cursor:pointer;box-shadow:0 1px 4px rgba(0,113,227,.2)}
-.range-labels{display:flex;justify-content:space-between;font-size:.6rem;color:var(--t);margin-top:1px}
-.result-section{display:none}
-.result-section.show{display:block;animation:pop .4s ease-out}
-@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-.gauge-wrap{display:flex;justify-content:center;align-items:center;padding:4px 0 8px}
-.gauge-ring{transform:rotate(-90deg)}
-.gauge-ring .bg{fill:none;stroke:#E5E5EA;stroke-width:10}
-.gauge-ring .fill{fill:none;stroke:var(--blue);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.25,.1,.25,1),stroke .5s}
-.risk-display{text-align:center}
-.risk-value{font-size:3rem;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.1}
-.risk-detail{font-size:.7rem;color:var(--s);margin-top:2px}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
-.stat-box{background:#FBFBFD;border-radius:8px;padding:8px 4px;text-align:center;border:1px solid #F0F0F5}
-.stat-box .num{font-size:1rem;font-weight:700;color:var(--text)}
-.stat-box .lbl{font-size:.55rem;color:var(--t);margin-top:1px;text-transform:uppercase;letter-spacing:.03em}
-.btn-row{text-align:center;margin-top:10px}
-.btn{padding:12px 40px;border-radius:26px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;background:var(--blue);color:#fff;box-shadow:0 3px 14px rgba(0,113,227,.22);transition:all .2s}
-.btn:hover{box-shadow:0 4px 20px rgba(0,113,227,.3);transform:translateY(-1px)}
-.btn:active{transform:scale(.97)}
-.info-bar{background:rgba(0,113,227,.04);border-radius:10px;padding:8px 12px;font-size:.65rem;color:var(--s);text-align:center;border:1px solid rgba(0,113,227,.06);line-height:1.5}
-footer{text-align:center;padding:4px 10px 16px;font-size:.6rem;color:var(--t)}
+.card h2{font-size:.95rem;font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:5px}.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}.dot-blue{background:var(--blue)}.dot-green{background:var(--green)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-size:.76rem;font-weight:600;margin-bottom:3px}.field label .val{font-size:.95rem;color:var(--blue);font-weight:700}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--blue) var(--fill,0%),var(--border) var(--fill,0%));outline:0}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--blue);cursor:pointer;box-shadow:0 1px 4px rgba(0,113,227,.2)}
+.range-labels{display:flex;justify-content:space-between;font-size:.6rem;color:var(--t);margin-top:1px}.result-section{display:none}.result-section.show{display:block;animation:pop .4s ease-out}@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.gauge-wrap{display:flex;justify-content:center;align-items:center;padding:4px 0 8px}.gauge-ring{transform:rotate(-90deg)}.gauge-ring .bg{fill:none;stroke:#E5E5EA;stroke-width:10}.gauge-ring .fill{fill:none;stroke:var(--blue);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.25,.1,.25,1),stroke .5s}
+.risk-display{text-align:center}.risk-value{font-size:3rem;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.1}.risk-detail{font-size:.7rem;color:var(--s);margin-top:2px}.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}.stat-box{background:#FBFBFD;border-radius:8px;padding:8px 4px;text-align:center;border:1px solid #F0F0F5}.stat-box .num{font-size:1rem;font-weight:700;color:var(--text)}.stat-box .lbl{font-size:.55rem;color:var(--t);margin-top:1px;text-transform:uppercase;letter-spacing:.03em}
+.btn-row{text-align:center;margin-top:10px}.btn{padding:12px 40px;border-radius:26px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;background:var(--blue);color:#fff;box-shadow:0 3px 14px rgba(0,113,227,.22);transition:all .2s}.btn:hover{box-shadow:0 4px 20px rgba(0,113,227,.3);transform:translateY(-1px)}.btn:active{transform:scale(.97)}
+.info-bar{background:rgba(0,113,227,.04);border-radius:10px;padding:9px 12px;font-size:.65rem;color:var(--s);text-align:center;border:1px solid rgba(0,113,227,.06);line-height:1.55}.note{background:rgba(255,149,0,.07);border-color:rgba(255,149,0,.15)}footer{text-align:center;padding:4px 10px 16px;font-size:.6rem;color:var(--t)}
 </style>
 </head>
 <body>
 <div class="container">
 <div class="hero">
   <h1>基于发病至就诊时间、舒张压及肌酸激酶构建的非新生儿重症破伤风发生风险在线预测列线图</h1>
-  <p class="citation">训练集 N=85 · 验证集 N=57 · 训练C统计量 0.834 · 验证C统计量 0.844</p>
+  <p>更新版：按新增病例重新拟合 Logistic 回归</p>
+  <p class="citation">模型组 N=87 · 验证组 N=60 · 训练 C 统计量 0.825 · 验证 C 统计量 0.860</p>
 </div>
 
 <div class="card">
   <h2><span class="dot dot-blue"></span> 患者参数</h2>
   <div class="form-grid">
     <div class="field"><label>发病至就诊时间 <span class="val" id="timeVal">3.0 天</span></label>
-      <input type="range" id="timeIn" min="1" max="20" value="3" step="0.5">
-      <div class="range-labels"><span>1</span><span>10</span><span>20 天</span></div></div>
+      <input type="range" id="timeIn" min="0.3" max="20.0" value="3" step="0.1">
+      <div class="range-labels"><span>0.3</span><span>10.2</span><span>20.0 天</span></div></div>
     <div class="field"><label>舒张压 <span class="val" id="dpVal">80 mmHg</span></label>
-      <input type="range" id="dpIn" min="60" max="115" value="80" step="1">
-      <div class="range-labels"><span>60</span><span>88</span><span>115 mmHg</span></div></div>
+      <input type="range" id="dpIn" min="58" max="113" value="80" step="1">
+      <div class="range-labels"><span>58</span><span>86</span><span>113 mmHg</span></div></div>
     <div class="field"><label>肌酸激酶 CK <span class="val" id="ckVal">274 U/L</span></label>
-      <input type="range" id="ckIn" min="0" max="5000" value="274" step="10">
-      <div class="range-labels"><span>0</span><span>2500</span><span>5000 U/L</span></div></div>
+      <input type="range" id="ckIn" min="20" max="5000" value="274" step="10">
+      <div class="range-labels"><span>20</span><span>2510</span><span>5000 U/L</span></div></div>
   </div>
   <div class="btn-row"><button class="btn" onclick="calculate()">计算风险</button></div>
 </div>
 
 <div class="card result-section" id="resultCard">
   <h2><span class="dot dot-green"></span> 预测结果</h2>
-  <div class="gauge-wrap">
-    <svg class="gauge-ring" width="140" height="140" viewBox="0 0 140 140">
-      <circle class="bg" cx="70" cy="70" r="58"/>
-      <circle class="fill" id="gaugeFill" cx="70" cy="70" r="58"/>
-    </svg>
-  </div>
-  <div class="risk-display"><div class="risk-value" id="riskValue">—</div>
-    <div class="risk-detail">重症概率（Ablet = 1）</div></div>
-  <div class="stats-row"><div class="stat-box"><div class="num" id="statPoints">—</div><div class="lbl">总得分</div></div>
-    <div class="stat-box"><div class="num" id="statLP">—</div><div class="lbl">线性预测值</div></div>
-    <div class="stat-box"><div class="num" id="statOR">—</div><div class="lbl">优势比</div></div>
-    <div class="stat-box"><div class="num">0.844</div><div class="lbl">C统计量<sup>验证</sup></div></div></div>
+  <div class="gauge-wrap"><svg class="gauge-ring" width="140" height="140" viewBox="0 0 140 140"><circle class="bg" cx="70" cy="70" r="58"/><circle class="fill" id="gaugeFill" cx="70" cy="70" r="58"/></svg></div>
+  <div class="risk-display"><div class="risk-value" id="riskValue">—</div><div class="risk-detail">重症概率（标准化 Ablet = 1）</div></div>
+  <div class="stats-row"><div class="stat-box"><div class="num" id="statPoints">—</div><div class="lbl">总得分</div></div><div class="stat-box"><div class="num" id="statLP">—</div><div class="lbl">线性预测值</div></div><div class="stat-box"><div class="num" id="statOR">—</div><div class="lbl">优势比</div></div><div class="stat-box"><div class="num">0.860</div><div class="lbl">验证 C 统计量</div></div></div>
 </div>
 
-<div class="info-bar">logit(P)=−5.641 − 0.218·时间(天) + 0.061·舒张压(mmHg) + 0.002·CK(U/L) &ensp;|&ensp; 训练N=85 · 验证N=57 · 验证C=0.844</div>
-<footer>仅供临床科研参考使用 &ensp;|&ensp; Logistic 回归模型</footer>
+<div class="info-bar" id="modelInfo"></div>
+<div class="info-bar note">编码说明：模型组 Ablet分期 0=轻症、1=重症；验证组原始 1/2 已映射为 0/1（1=轻症、2=重症）。若输入超出训练数据范围，结果属于外推估计。</div>
+<footer>仅供临床科研参考使用，不替代临床诊断或治疗决策&nbsp; | &nbsp;更新版 Logistic 回归模型</footer>
 </div>
 
 <script>
-const B0=-5.6407,B_TIME=-0.2183,B_DP=0.0613,B_CK=0.001939;
-const SCALE_TIME=20,SCALE_DP=113,SCALE_CK=4951;
-const TOTAL_BETA=Math.abs(B_TIME)*SCALE_TIME+B_DP*SCALE_DP+B_CK*SCALE_CK;
-const PTS_TIME=100*B_TIME/TOTAL_BETA;
-const PTS_DP=100*B_DP/TOTAL_BETA;
-const PTS_CK=100*B_CK/TOTAL_BETA;
+const MODEL={"input_workbook":"C:\\Users\\m1521\\xwechat_files\\wxid_4l4njfo41r4k22_824f\\msg\\file\\2026-11\\作图资料.xlsx","sheets":{"train":"模型组","validation":"验证组"},"n_train":87,"n_validation":60,"class_counts":{"train_mild":53,"train_severe":34,"validation_mild":42,"validation_severe":18},"outcome_definition":"标准化 Ablet=0 轻症，Ablet=1 重症","outcome_mapping":{"模型组原始值":{"0":0,"1":1},"验证组原始值":{"1":0,"2":1}},"predictors":["time","diastolicpressure","ck"],"parameters":{"intercept":-5.415658613527257,"time":{"label":"发病至就诊时间","unit":"天","coefficient":-0.22403899701282987,"std_error":0.10740154228123336,"p_value":0.03697914613259655,"odds_ratio":0.7992839640745931},"diastolicpressure":{"label":"舒张压","unit":"mmHg","coefficient":0.058351472578301575,"std_error":0.02268889824211641,"p_value":0.010116920549049556,"odds_ratio":1.060087521934636},"ck":{"label":"肌酸激酶 CK","unit":"U/L","coefficient":0.002001707679087444,"std_error":0.0008222667378620952,"p_value":0.01491742659102102,"odds_ratio":1.0020037124333245}},"metrics":{"train_auc":0.8246392896781354,"validation_auc":0.8597883597883598,"train_brier":0.16513499889353297,"validation_brier":0.14601045169573598},"ranges":{"time":{"observed_min":0.3,"observed_max":20.0,"slider_min":0.3,"slider_mid":10.2,"slider_max":20.0},"diastolicpressure":{"observed_min":58.0,"observed_max":113.0,"slider_min":58,"slider_mid":86,"slider_max":113},"ck":{"observed_min":29.0,"observed_max":4951.0,"slider_min":20,"slider_mid":2510,"slider_max":5000}},"score":{"scale_time":20.0,"scale_diastolicpressure":113.0,"scale_ck":4951.0,"total_beta":20.984951060766612,"points_per_unit":{"time":-1.067617438630545,"diastolicpressure":0.278063419873279,"ck":0.009538776970654124}},"notes":["验证组原始 Ablet分期 1/2 已按 1=轻症、2=重症映射到标准化 0/1。","模型基于模型组拟合，验证集仅用于独立性能评估。","HTML 内的风险为模型估计，不能替代临床诊断。"]};
+const B0=MODEL.parameters.intercept;
+const B_TIME=MODEL.parameters.time.coefficient;
+const B_DP=MODEL.parameters.diastolicpressure.coefficient;
+const B_CK=MODEL.parameters.ck.coefficient;
+const SCALE_TIME=MODEL.score.scale_time,SCALE_DP=MODEL.score.scale_diastolicpressure,SCALE_CK=MODEL.score.scale_ck;
+const TOTAL_BETA=MODEL.score.total_beta;
+const PTS_TIME=MODEL.score.points_per_unit.time,PTS_DP=MODEL.score.points_per_unit.diastolicpressure,PTS_CK=MODEL.score.points_per_unit.ck;
 const CIRCUMFERENCE=2*Math.PI*58;
-
 const timeIn=document.getElementById('timeIn'),ckIn=document.getElementById('ckIn'),dpIn=document.getElementById('dpIn');
 const timeVal=document.getElementById('timeVal'),ckVal=document.getElementById('ckVal'),dpVal=document.getElementById('dpVal');
-const resultCard=document.getElementById('resultCard');
-const riskValue=document.getElementById('riskValue');
-const gaugeFill=document.getElementById('gaugeFill');
+const resultCard=document.getElementById('resultCard'),riskValue=document.getElementById('riskValue'),gaugeFill=document.getElementById('gaugeFill');
 const statPoints=document.getElementById('statPoints'),statLP=document.getElementById('statLP'),statOR=document.getElementById('statOR');
-
+document.getElementById('modelInfo').textContent=`logit(P)=${B0.toFixed(3)} ${B_TIME<0?'−':'+'} ${Math.abs(B_TIME).toFixed(3)}·时间 + ${B_DP.toFixed(3)}·舒张压 + ${B_CK.toFixed(5)}·CK  |  模型组 N=${MODEL.n_train} · 验证组 N=${MODEL.n_validation} · 验证 C=${MODEL.metrics.validation_auc.toFixed(3)}`;
 function updateSlider(s){const mn=+s.min,mx=+s.max,v=+s.value;s.style.setProperty('--fill',((v-mn)/(mx-mn)*100)+'%');}
-function compute(){
-  const time=+timeIn.value,ck=+ckIn.value,dp=+dpIn.value;
-  const lp=B0+B_TIME*time+B_DP*dp+B_CK*ck;
-  const prob=1/(1+Math.exp(-lp));
-  return {lp,prob,totalPts:time*PTS_TIME+dp*PTS_DP+ck*PTS_CK};
-}
-function animateValue(el,start,end,dur,fmt){
-  const t0=performance.now();
-  function step(ts){const p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(start+(end-start)*e);if(p<1)requestAnimationFrame(step);}
-  requestAnimationFrame(step);
-}
-gaugeFill.style.strokeDasharray=CIRCUMFERENCE;
-gaugeFill.style.strokeDashoffset=CIRCUMFERENCE;
-
-function calculate(){
-  const r=compute(),pp=r.prob*100;
-  resultCard.classList.add('show');
-  const offset=CIRCUMFERENCE*(1-pp/100);
-  gaugeFill.style.strokeDashoffset=offset;
-  let color;if(pp<20)color='var(--green)';else if(pp<50)color='var(--orange)';else color='var(--red)';
-  gaugeFill.style.stroke=color;
-  const prev=riskValue.textContent==='—'?0:parseFloat(riskValue.textContent);
-  animateValue(riskValue,prev,pp,700,v=>v.toFixed(1)+'%');
-  riskValue.style.color='var(--text)';
-  statPoints.textContent=Math.round(r.totalPts);statLP.textContent=r.lp.toFixed(2);statOR.textContent=Math.exp(r.lp).toFixed(2);
-}
+function compute(){const time=+timeIn.value,ck=+ckIn.value,dp=+dpIn.value;const lp=B0+B_TIME*time+B_DP*dp+B_CK*ck;const prob=1/(1+Math.exp(-lp));return {lp,prob,totalPts:time*PTS_TIME+dp*PTS_DP+ck*PTS_CK};}
+function animateValue(el,start,end,dur,fmt){const t0=performance.now();function step(ts){const p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(start+(end-start)*e);if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+gaugeFill.style.strokeDasharray=CIRCUMFERENCE;gaugeFill.style.strokeDashoffset=CIRCUMFERENCE;
+function calculate(){const r=compute(),pp=r.prob*100;resultCard.classList.add('show');gaugeFill.style.strokeDashoffset=CIRCUMFERENCE*(1-pp/100);gaugeFill.style.stroke=pp<20?'var(--green)':pp<50?'var(--orange)':'var(--red)';const prev=riskValue.textContent==='—'?0:parseFloat(riskValue.textContent);animateValue(riskValue,prev,pp,500,v=>v.toFixed(1)+'%');statPoints.textContent=r.totalPts.toFixed(1);statLP.textContent=r.lp.toFixed(2);statOR.textContent=Math.exp(r.lp).toFixed(2);}
 timeIn.addEventListener('input',()=>{timeVal.textContent=parseFloat(timeIn.value).toFixed(1)+' 天';updateSlider(timeIn);calculate();});
 ckIn.addEventListener('input',()=>{ckVal.textContent=ckIn.value+' U/L';updateSlider(ckIn);calculate();});
 dpIn.addEventListener('input',()=>{dpVal.textContent=dpIn.value+' mmHg';updateSlider(dpIn);calculate();});
-[timeIn,ckIn,dpIn].forEach(updateSlider);
+[timeIn,ckIn,dpIn].forEach(updateSlider);calculate();
 </script>
 </body>
 </html>
